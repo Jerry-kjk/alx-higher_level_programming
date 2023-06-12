@@ -6,4 +6,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
     d = tuple_b[1] if len(tuple_b) >= 2 else 0
     sum1 = a + c
     sum2 = b + d
-    return (sum1 , sum2)
+    return (sum1, sum2)
