@@ -6,8 +6,7 @@ def safe_print_list_integers(my_list=[], x=0):
             if type(my_list[n]) is int:
                 print("{:d}".format(my_list[n]), end="")
                 num += 1
-        print()
-        return (num)
-    except IndexError:
-        print()
-        return (num)
+    except (ValueError, TypeError):
+        pass
+    print()
+    return (num)
