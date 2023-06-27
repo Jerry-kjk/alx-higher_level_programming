@@ -6,28 +6,70 @@
 class Node:
      """Represent a node in a singly-linked list."""
 
-     def __init__(self, data, next_node=None):
+    def __init__(self, data, next_node=None):
+        """
+        Initializes a Node object.
+
+        Args:
+            data (int): The data value of the node.
+            next_node (Node): The next node in the linked list (default: None).
+
+        Raises:
+            TypeError: If data is not an integer or next_node is not a Node object.
+        """
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
+        """
+        Getter method to retrieve the data value of the node.
+
+        Returns:
+            int: The data value of the node.
+        """
         return self.__data
 
     @data.setter
     def data(self, value):
+        """
+        Setter method to set the data value of the node.
+
+        Args:
+            value (int): The new data value of the node.
+
+        Raises:
+            TypeError: If value is not an integer.
+        """
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
+
         self.__data = value
 
     @property
     def next_node(self):
+        """
+        Getter method to retrieve the next node in the linked list.
+
+        Returns:
+            Node: The next node in the linked list.
+        """
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
+        """
+        Setter method to set the next node in the linked list.
+
+        Args:
+            value (Node): The new next node in the linked list.
+
+        Raises:
+            TypeError: If value is not a Node object.
+        """
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
+
         self.__next_node = value
 
 
@@ -35,36 +77,40 @@ class SinglyLinkedList:
     """Represent a singly-linked list."""
 
     def __init__(self):
+        """
+        Initializes a SinglyLinkedList object.
+        """
         self.head = None
 
     def sorted_insert(self, value):
+        """
+        Inserts a new Node into the correct sorted position in the linked list (increasing order).
+
+        Args:
+            value (int): The value of the new Node to be inserted.
+        """
         new_node = Node(value)
 
-        if self.head is None:
-            # If the list is empty, set the new node as the head
-            self.head = new_node
-        elif value < self.head.data:
-            # If the value is smaller than the head's data,
-            # insert the new node at the beginning of the list
+        if self.head is None or value < self.head.data:
             new_node.next_node = self.head
             self.head = new_node
         else:
             current = self.head
             while current.next_node is not None and current.next_node.data < value:
-                # Traverse the list to find the correct position for insertion
                 current = current.next_node
-
-            # Insert the new node between current and current.next_node
             new_node.next_node = current.next_node
             current.next_node = new_node
 
     def __str__(self):
-        output = ""
+        """
+        Returns a string representation of the linked list.
+
+        Returns:
+            str: A string representation of the linked list.
+        """
         current = self.head
-
+        result = ""
         while current is not None:
-            # Traverse the list and concatenate the data of each node
-            output += str(current.data) + "\n"
+            result += str(current.data) + "\n"
             current = current.next_node
-
-        return output.strip()
+        return result.strip()
