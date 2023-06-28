@@ -15,8 +15,10 @@ class Square:
             position (tuple): The position of the square (default: (0, 0)).
 
         Raises:
-            TypeError: If size is not an integer or position is not a tuple of 2 positive integers.
-            ValueError: If size is less than 0 or position contains non-positive integers.
+            TypeError: If size is not an integer or position is
+            not a tuple of 2 positive integers.
+            ValueError: If size is less than 0 or position contains
+            non-positive integers.
         """
         self.size = size
         self.position = position
@@ -97,6 +99,6 @@ class Square:
             for _ in range(self.__position[1]):
                 print()
 
-            for _ in range(self.__size):
+            for _ in range(self.__size): 
                 print(" " * self.__position[0] + "#" * self.__size)
 
