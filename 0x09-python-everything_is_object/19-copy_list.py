@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""returns a copy of a list."""
+
+
 def copy_list(l):
-    """Return a shallow copy of the input list 'l'"""
     return l[:]
