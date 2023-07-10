@@ -29,13 +29,13 @@ class Rectangle(BaseGeometry):
         self.integer_validator("width", width)
         self.integer_validator("height", height)
 
-        def area(self):
+    def area(self):
             """
             Returns area of Rectangle object.
             """
             return self.__width * self.__height
 
-        def __str__(self):
+    def __str__(self):
             """
             string represention of Rectangle object.
             """
