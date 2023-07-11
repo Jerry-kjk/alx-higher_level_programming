@@ -12,7 +12,8 @@ class BaseGeometry:
         Calculates the area of the geometry.
 
         Raises:
-            Exception: If the area method is not implemented in the derived class.
+            Exception: If the area method is
+            not implemented in the derived class.
 
         Returns:
             None
