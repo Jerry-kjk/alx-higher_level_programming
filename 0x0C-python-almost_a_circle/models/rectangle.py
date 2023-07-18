@@ -48,10 +48,10 @@ class Rectangle(Base):
 
     @property
     def height(self):
-       """
-       Getter method for the height attribute.
-       """
-       return self.__height
+        """
+        Getter method for the height attribute.
+        """
+        return self.__height
 
     @height.setter
     def height(self, value):
