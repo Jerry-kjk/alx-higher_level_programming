@@ -21,10 +21,10 @@ if __name__ == "__main__":
 
 
     db = MySQLdb.connect(host=host,
+                         port=port,
                          user=username,
                          passwd=password,
                          db=name,
-                         port=port,
                          charset="utf8"
                          )
 
