@@ -17,12 +17,14 @@ if __name__ == "__main__":
     server = 'localhost'
     port = 3306
 
-    db = MySQLdb.connect(host=server,
-                        user=username,
-                        passwd=password,
-                        db=database,
-                        port=port,
-                        charset="utf8")
+    db = MySQLdb.connect(
+                         host=server,
+                         user=username,
+                         passwd=password,
+                         db=database,
+                         port=port,
+                         charset="utf8"
+                         )
 
     cur = db.cursor()
     sql = """
