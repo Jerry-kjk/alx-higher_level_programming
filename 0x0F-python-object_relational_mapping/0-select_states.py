@@ -16,7 +16,7 @@ if __name__ == "__main__":
     db = sys.argv[3]
 
     db = MySQLdb.connect(host="localhost", user=user, passwd=passwd,
-                            db=db, port=3306, charset="utf8")
+                         db=db, port=3306, charset="utf8")
 
     cur = db.cursor()
     cur.execute("SELECT * FROM states ORDER BY id ASC")
