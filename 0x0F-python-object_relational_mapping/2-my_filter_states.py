@@ -25,7 +25,8 @@ if __name__ == "__main__":
                          passwd=password,
                          db=name,
                          port=port,
-                         charset="utf8")
+                         charset="utf8"
+                         )
 
     cur = db.cursor()
     sql = """SELECT * FROM states WHERE name LIKE BINARY '{}'
