@@ -1,1 +1,1 @@
-0x0D. SQL - Introduction
+0x14. JavaScript - Web scraping
